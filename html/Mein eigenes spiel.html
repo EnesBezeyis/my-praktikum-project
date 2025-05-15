@@ -1,0 +1,88 @@
+import pygame
+import random
+import sys
+
+# Initialisierung
+pygame.init()
+WIDTH, HEIGHT = 800, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+pygame.display.set_caption("Dino Runner")
+
+# Farben
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+# Spieler-Charakter
+player = pygame.Rect(100, 300, 50, 50)  # x, y, breite, höhe
+gravity = 0
+jumping = False
+
+# Hindernisse
+obstacles = []
+
+# Punktestand
+score = 0
+font = pygame.font.SysFont(None, 36)
+
+def spawn_obstacle():
+    height = random.randint(30, 60)
+    obstacle = pygame.Rect(WIDTH, 300 + (50 - height), 20, height)
+    obstacles.append(obstacle)
+
+# Spielschleife
+spawn_timer = 0
+running = True
+while running:
+    screen.fill(WHITE)
+    pygame.draw.line(screen, BLACK, (0, 350), (WIDTH, 350), 2)
+
+    # Events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        # Springen mit Leertaste
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE and not jumping:
+                gravity = -15
+                jumping = True
+
+    # Spielerbewegung
+    gravity += 1
+    player.y += gravity
+    if player.y >= 300:
+        player.y = 300
+        jumping = False
+
+    pygame.draw.rect(screen, (0, 100, 200), player)
+
+    # Hindernisse bewegen
+    for obstacle in obstacles:
+        obstacle.x -= 5
+        pygame.draw.rect(screen, (200, 0, 0), obstacle)
+
+    # Entferne alte Hindernisse
+    obstacles = [obs for obs in obstacles if obs.x > -20]
+
+    # Hindernisse erzeugen
+    spawn_timer += 1
+    if spawn_timer > 90:
+        spawn_obstacle()
+        spawn_timer = 0
+
+    # Kollisionen prüfen
+    for obs in obstacles:
+        if player.colliderect(obs):
+            print("Game Over!")
+            pygame.quit()
+            sys.exit()
+
+    # Punkte anzeigen
+    score += 1
+    score_surface = font.render(f"Punkte: {score // 10}", True, BLACK)
+    screen.blit(score_surface, (10, 10))
+
+    pygame.display.update()
+    clock.tick(60)

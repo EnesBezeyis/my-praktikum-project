@@ -1,0 +1,23 @@
+  p{
+font-family: 'Times New Roman', Times, serif;
+    font-size:40px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+
+}
+
+body{
+    background-color: rgb(11, 231, 231)
+
+}
+
+h1{
+    font-size:60px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 0, 0);
+}
+h2{
+    font-size:50px;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(255, 0, 0);
+}
