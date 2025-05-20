@@ -1,35 +1,51 @@
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klick-Geschwindigkeitstest</title>
     <link rel="stylesheet" href="../../css/dienstagspiel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-  
-        <h2>Klick-Geschwindigkeitstest</h2>
-        <p>Klicke so oft du kannst in der vorgegebenen Zeit!</p>
+    <header>
+        <h1>Klick-Geschwindigkeitstest</h1>
+    </header>
 
-        <button id="startButton">Spiel starten</button>
+    <main>
+        <div class="container">
+            <h2>Klicke so oft du kannst in der vorgegebenen Zeit!</h2>
+            <p>Ein kurzer Test für deine Reaktionszeit.</p>
 
-        <div id="gameArea" class="game-area hidden">
-            <p>Zeit: <span id="timer"></span>s</p>
-            <p>Klicks: <span id="clickCount">0</span></p>
-            <div id="clickTarget">Klicke hier!</div>
+            <button id="startButton" class="game-button">Spiel starten</button>
+
+            <div id="gameArea" class="game-area hidden">
+                <p><i class="fas fa-hourglass-start"></i> Zeit: <span id="timer"></span>s</p>
+                <p><i class="fas fa-hand-pointer"></i> Klicks: <span id="clickCount">0</span></p>
+                <div id="clickTarget" class="click-target">
+                    Klicke hier!
+                    <div id="clickFeedbackContainer" class="feedback-container"></div>
+                </div>
+            </div>
+
+            <div id="resultArea" class="result-area hidden">
+                <h2>Dein Ergebnis:</h2>
+                <p>Du hast <span id="finalClicks"></span> Klicks gemacht!</p>
+                <button id="restartButton" class="game-button">Nochmal spielen</button>
+            </div>
+
+            <div class="highscore-display">
+                <h3><i class="fas fa-trophy"></i> Highscore Klicktest:</h3>
+                <ol id="clickHighscoreList"></ol>
+            </div>
+
+            <div class="back-to-home">
+                <button class="game-button" onclick="window.location.href='index.html'" >Zurück zur Hauptseite</button>
+            </div>
         </div>
-
-        <div id="resultArea" class="result-area hidden">
-            <h2>Dein Ergebnis:</h2>
-            <p>Du hast <span id="finalClicks"></span> Klicks gemacht!</p>
-            <button id="restartButton">Nochmal spielen</button>
-        </div>
-    </div>
+    </main>
 
     <script src="../../js/dienstag2.js"></script>
-</body>
-</html>
 </body>
 </html>

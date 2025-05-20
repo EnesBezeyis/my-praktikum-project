@@ -8,7 +8,7 @@ const startButton = document.getElementById('memory-start-button');
 const statusMessage = document.getElementById('memory-status-message');
 
 // Spielkonfiguration
-const cardValues = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']; // Beispielwerte für Karten
+const cardValues = ['😀', '🤑', '😈', '😡', '🤡', '🤢', '🤓', '🤖']; // Beispielwerte für Karten
 // Für Bilder könntest du hier URLs verwenden:
 // const cardImages = ['img/cat.png', 'img/dog.png', ...];
 

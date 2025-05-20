@@ -1,40 +1,56 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/dienstag2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Dienstag 20.05.2025</title>
 </head>
 <body>
-    <h1>Dienstag den 20.05.2025</h1>
-    <p>Nach einen langen erholsamen Wochenende ertmal hier die Klick-Geschwindigkeit testen:</p>
-    <div class="klickspielbutton">
-    <button
-      class="Buttonlink"
-      file:1
-      onclick="window.location.href='dienstagspiel20.05.html'"
-      >Klick-Geschwindigkeitstest</button>
-    </div>
-    <p>Die letzte Arbeitswoche war angebrochen. Ich versuchte in dieser Woche noch so viel aus dem Praktikum mitzunehmen wie möglich. Deshalb hatte ich mich an vielen sachen probiert. </p>
-    <p>Deshalb ein kleines Puzzle Spiel:</p>
-  <div class="memory-container">
-        <h1 class="memory-title">Memory Spiel</h1>
-        <div class="memory-info">
-            <p id="memory-moves">Versuche: 0</p>
-            <p id="memory-timer">Zeit: 0s</p>
-        </div>
-        <div id="memory-board">
+    <header>
+        <h1>Dienstag den 20.05.2025</h1>
+    </header>
+
+    <main>
+        <section class="game-intro-section">
+            <p>Nach einem langen erholsamen Wochenende erstmal hier die Klick-Geschwindigkeit testen:</p>
+            <div class="klickspielbutton">
+                <button
+                    class="Buttonlink"
+                    onclick="window.location.href='dienstagspiel20.05.html'"
+                >Klick-Geschwindigkeitstest</button>
             </div>
-        <button id="memory-start-button">Neues Spiel</button>
-        <p id="memory-status-message"></p>
-    </div>
+        </section>
+
+        <section class="memory-game-section">
+            <p>Die letzte Arbeitswoche war angebrochen. Ich versuchte in dieser Woche noch so viel aus dem Praktikum mitzunehmen wie möglich. Deshalb hatte ich mich an vielen Sachen probiert. </p>
+            <p>Deshalb ein kleines Puzzle Spiel:</p>
+
+            <div class="memory-container">
+                <h1 class="memory-title">Memory Spiel</h1>
+                <div class="memory-info">
+                    <p><i class="fas fa-redo"></i> <span id="memory-moves">0</span></p>
+                    <p><i class="fas fa-hourglass-half"></i> <span id="memory-timer">0</span></p>
+                </div>
+                <div id="memory-board">
+                    </div>
+                <button id="memory-start-button" class="game-button">Neues Spiel</button>
+                <p id="memory-status-message"></p>
+
+                <div class="highscore-display">
+                    <h3><i class="fas fa-trophy"></i> Highscore Memory:</h3>
+                    <ol id="memoryHighscoreList"></ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <p>Memory war mein Lieblingsspiel als Kind.</p>
+            <p> Ich lerne vereinzelt JavaScript-Befehle und habe mir immer wieder den Code, den mir die KI ausgespuckt hat, angeschaut, um ihn ein wenig zu verstehen. </p>
+        </section>
+    </main>
 
     <script src="../../js/dienstag2puzzle.js"></script>
-    <p>An ddiesen tag habe ich zudem auch nch gel</p>
 </body>
 </html>

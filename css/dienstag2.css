@@ -1,75 +1,190 @@
-   body {
-        text-align: center;
- background: linear-gradient(to right, #87CEEB, #AED6F1, #98FB98);
-color: white;
-        
-        
-      }
+/* Globale Einstellungen und Body */
+body {
+    font-family: Arial, sans-serif; /* Wieder auf Arial, sans-serif gesetzt */
+    display: flex;
+    flex-direction: column; /* Für Header, Sektionen */
+    justify-content: flex-start; /* Inhalt oben ausrichten */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Dein animierter Hintergrund - Start */
+    background: linear-gradient(135deg, #87CEEB, #AED6F1, #98FB98); /* Dein Farbverlauf */
+    background-size: 400% 400%; /* Vergrößert, damit sich der Verlauf bewegen kann */
+    animation: gradientAnimation 15s ease infinite; /* Animation definieren */
+    overflow-x: hidden; /* Verhindert horizontale Scrollbalken bei Animation */
+    color: white; /* Dein gewünschter Textfarbe auf dem Body */
+    text-align: center; /* Dein gewünschter Textausrichtung auf dem Body */
+}
 
-      .klickspielbutton {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-        width: 500px;
-        margin: auto;
-        padding: 40px;
-        border-radius: 20px;}
-        
-      .Buttonlink {
-        display: flex;
-        gap: 20px;
-      }
-      .Buttonlink {
-        width: 500px;
-        padding: 10px;
-        font-size: 40px;
-        border: none;
-        border-radius: 10px;
-        background-color: #2797ff;
-        color: #FFFFFF;
-        font-weight: bold;
-        cursor: pointer;
-    transition: background-color 0.3s ease;
-      }
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-      
+/* Header Styling (falls in HTML vorhanden) */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    /* Hintergrund und Schatten des Headers beibehalten, da er oft als Seitenkopf dient */
+    background-color: rgba(255, 255, 255, 0.2); /* Etwas transparenter, damit der Verlauf durchscheint */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white; /* Textfarbe im Header, damit sie auf dem Verlauf sichtbar ist */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
 
-      .Buttonlink:hover{
-        background-color: #00ff37;
-        color: whitesmoke;
-      }
+/* Main Bereich - JETZT TRANSPARENT */
+main {
+    width: 90%;
+    max-width: 2000px;
+    /* background-color und box-shadow entfernt */
+    background-color: transparent; /* Macht den Main-Container transparent */
+    box-shadow: none; /* Entfernt den Schatten */
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 30px;
+    color: white; /* Textfarbe innerhalb des Main-Containers, da er jetzt auf dem Body-Hintergrund liegt */
+}
 
-      h1{
-        font-size: 90px;
-      }
-      p{
-        font-size: 40px;
-      }
-    /* memory-style.css */
+/* Allgemeine Überschriften */
+h1 {
+    font-size: 90px;
+    color: white; /* H1 bleibt weiß für den Body-Hintergrund */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Stärkerer Schatten für bessere Lesbarkeit auf Verlauf */
+}
 
-/* --- Allgemeine Einstellungen für den Memory-Container --- */
-.memory-container {
+h2 {
+    font-size: 2em;
+    color: white; /* H2 wird weiß, da es direkt auf dem Body-Hintergrund liegt */
+    margin-bottom: 20px;
     font-family: Arial, sans-serif;
-    b background: linear-gradient(to right, #87CEEB, #AED6F1, #98FB98);
-color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+h3 {
+    color: white; /* H3 wird weiß */
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Allgemeine Paragraphen */
+p {
+    font-size: 40px;
+    line-height: 1.5;
+    color: white; /* P bleibt weiß für den Body-Hintergrund */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* Stärkerer Schatten */
+    font-family: Arial, sans-serif;
+}
+
+/* Spezifische Anpassungen für P-Tags innerhalb von Containern, die jetzt auch transparent sind */
+/* Diese Regeln könnten weniger relevant werden, wenn die Container selbst transparent sind.
+   Achte auf die Reihenfolge im CSS, falls du spezifischere Farben für Text in Sub-Containern möchtest. */
+main p, .container p, .memory-info p, .highscore-display p, .highscore-display li {
+    font-size: 40px;
+    color: white; /* Auch diese P-Elemente werden weiß, da sie jetzt auf dem Body-Hintergrund liegen */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Schatten für Lesbarkeit */
+    font-family: Arial, sans-serif;
+}
+
+/* Sektionen - JETZT TRANSPARENT */
+section {
+    padding: 20px;
+    /* border und background-color entfernt */
+    border: none; /* Entfernt den Rahmen */
+    background-color: transparent; /* Macht die Sektionen transparent */
+    box-shadow: none; /* Entfernt den Schatten */
+    border-radius: 10px;
+    /* Die game-intro-section sollte auch keine spezifische Hintergrundfarbe mehr haben */
+}
+
+/* Klickspiel-Button Bereich (.klickspielbutton) - HINTERGRUND BEHALTEN, ABER ANGEPASST */
+.klickspielbutton {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    /* Box-Schatten beibehalten, um die Box zu definieren */
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2), /* Etwas dunklerer Schatten */
+                0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* SEHR leichter transparenter Hintergrund */
+    color: white; /* Textfarbe in dieser Box */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Schatten für Text in Box */
+}
+
+/* Allgemeine Button-Styles (für Buttonlink und memory-start-button) */
+.Buttonlink, #memory-start-button {
+    width: 500px;
+    padding: 15px;
+    font-size: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2797ff; /* Dein gewünschtes Blau */
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); /* Blauer Schatten etwas stärker */
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.Buttonlink:hover, #memory-start-button:hover {
+    background-color: #00ff37;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5); /* Blauer Schatten noch stärker */
+}
+
+.Buttonlink:active, #memory-start-button:active {
+    background-color: #00c72b;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Memory-Container Styling - HINTERGRUND BEHALTEN, ABER ANGEPASST --- */
+.memory-container {
+    background: linear-gradient(135deg, rgba(135, 206, 235, 0.1), rgba(174, 214, 241, 0.1), rgba(152, 251, 152, 0.1)); /* DEIN Farbverlauf mit Transparenz */
+    color: white;
     padding: 25px;
     border-radius: 10px;
-     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2), /* Stärkerer Schatten */
+                0px 10px 15px -3px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 90%;
-    max-width: 600px; /* Oder eine andere passende Breite für dein Gitter */
+    max-width: 600px;
     margin: 40px auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
 
 .memory-title {
-    color: #333;
+    color: white; /* Titel in Memory-Container wird weiß */
     margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .memory-info {
@@ -77,30 +192,47 @@ color: white;
     justify-content: space-around;
     margin-bottom: 20px;
     font-size: 1.1em;
-    color: #555;
+    color: white; /* Infos in Memory-Container werden weiß */
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.memory-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* --- Memory-Board Styling --- */
 #memory-board {
     display: grid;
-    /* Spalten und Zeilen werden von JavaScript basierend auf der Anzahl der Karten gesetzt */
-    gap: 10px; /* Abstand zwischen den Karten */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     width: 100%;
     margin: 20px auto;
-    perspective: 1000px; /* Für 3D-Flip-Effekt */
+    perspective: 1000px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund für das Board */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Subtiler innerer Schatten */
 }
 
-/* --- Karten Styling --- */
+/* --- Memory-Karten Styling --- */
 .memory-card {
     width: 100%;
-    height: 100px; /* Feste Höhe, Breite passt sich dem Grid an */
-    background-color: #ddd;
+    height: 100px;
+    /* background-color entfernt, da card-front/back dies definieren */
     border-radius: 8px;
     cursor: pointer;
-    position: relative; /* Für die Vorder- und Rückseite */
-    transform-style: preserve-3d; /* Wichtig für 3D-Flip */
-    transition: transform 0.6s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Etwas stärkerer Schatten */
 }
 
 .memory-card.flipped {
@@ -108,64 +240,165 @@ color: white;
 }
 
 .memory-card.matched {
-    /* Optional: Leichte Transparenz oder andere Farbe für gefundene Paare */
-    opacity: 0.7;
+    opacity: 0.5;
     cursor: default;
-    box-shadow: 0 0 0 rgba(0,0,0,0); /* Schatten entfernen */
-    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: opacity 0.5s ease-in-out;
 }
 
 .card-face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Versteckt die Rückseite, wenn sie nicht sichtbar ist */
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: bold;
-    color: white;
+    color: white; /* Text/Icon auf den Karten-Faces, falls auf dem Verlauf */
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .card-front {
-    background-color: #555; /* Farbe der verdeckten Karte */
+    background-color: rgba(0, 123, 255, 0.7); /* Transparenteres Blau für die Vorderseite */
+    color: white;
+    /* transform: rotateY(180deg); - NICHT HIER, da die Rückseite umgedreht ist */
 }
 
 .card-back {
-    background-color: #007bff; /* Hintergrund der aufgedeckten Karte */
-    transform: rotateY(180deg); /* Rückseite standardmäßig um 180 Grad gedreht */
-}
-
-/* Optional: Bilder für die Rückseite der Karten */
-.card-back img {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-/* --- Button Styling --- */
-#memory-start-button {
-    background-color: #2797ff;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparenteres Grau für die Rückseite */
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
+    font-size: 2.5em;
+    transform: rotateY(180deg); /* Die Rückseite ist die, die um 180 Grad gedreht ist, um unsichtbar zu sein */
 }
 
-#memory-start-button:hover {
-    background-color: #00ff37;
-}
-
-/* --- Status-Nachricht --- */
+/* Status-Nachricht */
 #memory-status-message {
     font-size: 30px;
     font-weight: bold;
-    color: #00ff37
+    color: #00ff37; /* Hellgrün */
     margin-top: 10px;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+/* Highscore Styling - HINTERGRUND BEHALTEN, ABER ANGEPASST */
+.highscore-display {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Hintergrund */
+    border-radius: 12px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0,0,0,0.2); /* Leichter Schatten */
+    width: 80%;
+    max-width: 400px;
+    color: white; /* Textfarbe im Highscore-Bereich */
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.highscore-display h3 {
+    margin-top: 0;
+    color: white; /* Überschrift im Highscore wird weiß */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.3em;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.highscore-display ol {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.highscore-display li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.3); /* Transparentere Trennlinie */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    color: white; /* Listenpunkte werden weiß */
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.highscore-display li:last-child {
+    border-bottom: none;
+}
+
+.highscore-display li span {
+    font-weight: bold;
+    color: #ffd700; /* Gold für Highscore-Werte */
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 60px;
+    }
+    p {
+        font-size: 40px;
+    }
+    .klickspielbutton, .Buttonlink, #memory-start-button {
+        width: 90%;
+        font-size: 30px;
+        padding: 12px;
+    }
+    .memory-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+    #memory-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .memory-card {
+        height: 80px;
+    }
+    .card-face {
+        font-size: 1.8em;
+    }
+    #memory-status-message {
+        font-size: 24px;
+    }
+    .highscore-display {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 45px;
+    }
+    p {
+        font-size: 22px;
+    }
+    .klickspielbutton, .Buttonlink, #memory-start-button {
+        font-size: 22px;
+        padding: 10px;
+    }
+    #memory-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+    .memory-card {
+        height: 60px;
+    }
+    .card-face {
+        font-size: 1.5em;
+    }
+    #memory-status-message {
+        font-size: 20px;
+    }
 }
