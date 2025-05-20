@@ -1,0 +1,17 @@
+
+body{
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  background: #d1d1d1;
+background: linear-gradient(90deg, rgba(209, 209, 209, 1) 0%, rgba(94, 179, 196, 1) 47%, rgba(0, 204, 255, 1) 100%);
+}
+ h1{
+    font-size: 90px;
+     color:  (#525050);}
+p{
+    font-size: 80px;
+    color:  (#525050);
+}

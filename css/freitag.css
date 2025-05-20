@@ -1,0 +1,113 @@
+        
+
+        #game {
+            background:  linear-gradient(90deg, rgba(146, 140, 237, 1) 0%, rgba(43, 43, 117, 1) 47%, rgba(85, 46, 92, 1) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            color}
+
+        #guess {
+            padding: 10px;
+            margin: 10px;
+            font-size: 40px;
+            width : 200px;
+            border-radius: 20px;
+        }
+        .spielbutton{
+            padding: 10px;
+            margin: 10px;
+            font-size: 40px;
+            width: 200px
+           
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        body {
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+   background: #928ced;
+background: linear-gradient(90deg, rgba(146, 140, 237, 1) 0%, rgba(43, 43, 117, 1) 47%, rgba(85, 46, 92, 1) 100%);
+    margin: 0;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    
+}
+
+#display {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    background-color: #444;
+    color: #eee;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #555;
+    color: #eee;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0e1d9e;
+}
+
+.zero {
+    grid-column: 1 / span 2;
+}
+
+.equal {
+    background-color: #007bff;
+}
+
+.equal:hover {
+    background-color: #0056b3;
+}
+
+/* Spezifisches Styling für die ersten Buttons (C, DEL, /, *) */
+.buttons button:nth-child(-n+4) {
+    background-color: #ff9800;
+    color: #333;
+}
+
+.buttons button:nth-child(-n+4):hover {
+    background-color: #f57c00;}
+
+    h1 {
+        font-size: 90px;
+        color: #eee;
+    }
+    p{
+        font-size: 40px;
+        color: #eee;
+    }

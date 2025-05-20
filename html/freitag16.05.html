@@ -3,11 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/freitag.css">
     <title>Freitag 16.05.2025</title>
 </head>
 <body>
+    <h1>Freitag den 16.05.2025</h1>
+<p>Freitag muss ich zugeben das ich fasst nur an der seite von Donnerstag gearbeitet hab, weil die seite ziemlich umfangreich war.
+    ich habe Jedoch eins der Spiele zuende gebracht. Hier ist es:
+</p>
+<div id="game">
+    <h1>🎲 Zahl raten!</h1>
+    <p>Ich habe eine Zahl zwischen 1 und 100 gewählt. Kannst du sie erraten?</p>
+    <input type="number" id="guess" placeholder="Deine Zahl eingeben" min="1" max="100">
+    <button onclick="checkGuess()">Raten</button>
+    <p id="message"></p>
+</div>
+
+<script>
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+        const guess = parseInt(document.getElementById('guess').value);
+        const message = document.getElementById('message');
+        attempts++;
+
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+            message.textContent = "❌ Bitte gib eine gültige Zahl zwischen 1 und 100 ein.";
+            return;
+        }
+
+        if (guess === secretNumber) {
+            message.textContent = `🎉 Richtig! Du hast die Zahl ${secretNumber} in ${attempts} Versuchen erraten!`;
+        } else if (guess < secretNumber) {
+            message.textContent = "🔼 Zu niedrig. Versuch es nochmal!";
+        } else {
+            message.textContent = "🔽 Zu hoch. Versuch es nochmal!";
+        }
+    }
+    </script>
+
+    <P>Es ist nicht das koplexeste Spiel, macht jedoch trotzdem spaß.</P>
+
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="appendOperator('/')">/</button>
+            <button onclick="appendOperator('*')">*</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendOperator('-')">-</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('+')">+</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="equal" onclick="calculate()">=</button>
+
+            <button onclick="appendNumber('0')" class="zero">0</button>
+            <button onclick="appendDecimal()">.</button>
+        </div>
+    </div>
+
+    <script src="../js/freitag.js"></script>
+
+    <p>Für den Taschenrechner brauchte ich jede menge an Javascript. Ich habe dies jedoch nicht auf die Schnelle gelernt sondern hab den code mir von einer KI erstellen lassen. Den Code jedoch in die Seite einzubringen und zu verstehen hat mich auch eine menge Zeit gekostet. </p>
     
 </body>
 </html>
-
-<h1>Freitag den 16.05.2025</h1>

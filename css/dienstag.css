@@ -1,0 +1,23 @@
+p{
+    font-size:40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: chartreuse;
+}
+
+.X{
+    font-size:50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: bisque;
+    font-style: italic;
+   text-decoration: underline;
+}
+body{
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+}
+h1{
+    font-size: 90px;
+    font-family: 'Times New Roman', Times, serif;
+    color: chartreuse;
+    
+}

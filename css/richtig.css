@@ -1,0 +1,47 @@
+body {
+        text-align: center;
+       background: #020024;
+background: linear-gradientbackground: #2a9b2e;
+background: linear-gradient(90deg, rgba(42, 155, 46, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+color: white;
+        
+        
+      }
+
+      .donnerstagBtnDivContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        margin: auto;
+        padding: 40px;
+        border-radius: 20px;
+      }
+      .donnerstagBtnDiv {
+        display: flex;
+        gap: 20px;
+      }
+      .Buttonfalsch {
+        width: 200px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(255, 174, 0);
+        color: rgb(255, 38, 0);
+        font-weight: bold;
+      }
+
+      .Buttonfalsch:hover{
+        background-color: darkblue;
+        color: whitesmoke;
+      }
+      h1{
+        font-size: 90px;
+      }
+      p{
+        font-size: 40px;
+      }
