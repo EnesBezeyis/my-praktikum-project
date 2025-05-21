@@ -1,0 +1,145 @@
+/* Grundlegende Einstellungen */
+body {
+    font-family: 'Open Sans', sans-serif; /* Eine klare und gut lesbare Schriftart für den Haupttext */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dunkelgrauer Text für gute Lesbarkeit */
+    background: linear-gradient(to right bottom, #e0f2f7, #c6e0e9); /* Sanfter Farbverlauf für den Hintergrund */
+    background-attachment: fixed; /* Hintergrund bleibt beim Scrollen fixiert */
+}
+
+/* Header-Bereich */
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Leicht transparenter weißer Hintergrund */
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten für Tiefe */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Lora', serif; /* Eine elegante Serifenschrift für Überschriften */
+    font-size: 3em;
+    color: #2c3e50; /* Dunkelblauer Ton für die Hauptüberschrift */
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Hauptinhaltsbereich */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.daily-entry {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Deutlicherer Schatten für die Karten */
+    transition: transform 0.3s ease-in-out; /* Sanfte Transformation beim Hovern */
+}
+
+.daily-entry:hover {
+    transform: translateY(-5px); /* Beim Hovern leicht anheben */
+}
+
+.daily-entry h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    color: #34495e; /* Etwas heller als die Hauptüberschrift */
+    border-bottom: 2px solid #aec6cf; /* Unterstreichung mit passender Farbe */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.entry-content p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Footer-Bereich */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .daily-entry {
+        padding: 20px;
+    }
+
+    .daily-entry h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    main {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .daily-entry {
+        padding: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+.webseite{
+     width: 500px;
+    padding: 20px;
+    font-size: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2797ff; /* Dein gewünschtes Blau */
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); /* Blauer Schatten etwas stärker */
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.webseite:hover{
+    background-color: #00ff37;
+    color: whitesmoke;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5); /* Blauer Schatten noch stärker */
+}
+
+.webseite:active{
+    background-color: #00c72b;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

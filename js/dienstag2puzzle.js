@@ -6,11 +6,10 @@ const movesDisplay = document.getElementById('memory-moves');
 const timerDisplay = document.getElementById('memory-timer');
 const startButton = document.getElementById('memory-start-button');
 const statusMessage = document.getElementById('memory-status-message');
+const highscoreDisplay = document.getElementById('memory-highscore'); // Neues Element für den Highscore
 
 // Spielkonfiguration
 const cardValues = ['😀', '🤑', '😈', '😡', '🤡', '🤢', '🤓', '🤖']; // Beispielwerte für Karten
-// Für Bilder könntest du hier URLs verwenden:
-// const cardImages = ['img/cat.png', 'img/dog.png', ...];
 
 let cards = []; // Array der Kartenobjekte
 let flippedCards = []; // Speichert die gerade aufgedeckten Karten
@@ -19,6 +18,7 @@ let moves = 0;
 let timer = 0;
 let timerInterval;
 let lockBoard = false; // Verhindert Klicks, während Karten verglichen werden
+let highscore = Infinity; // Initialisiere Highscore mit Unendlich, damit jeder erste Score besser ist
 
 // Funktion zum Initialisieren des Spiels
 function initializeGame() {
@@ -34,9 +34,11 @@ function initializeGame() {
     clearInterval(timerInterval);
     lockBoard = false;
 
+    // Lade Highscore aus dem Local Storage
+    loadHighscore();
+
     // Erstelle doppelte Kartenwerte für Paare
     const gameCardValues = [...cardValues, ...cardValues];
-    // Oder bei Bildern: const gameCardImages = [...cardImages, ...cardImages];
 
     // Mischen der Kartenwerte
     shuffleArray(gameCardValues);
@@ -58,11 +60,7 @@ function initializeGame() {
 
         const cardBack = document.createElement('div');
         cardBack.classList.add('card-face', 'card-back');
-        cardBack.textContent = value; // Zeigt den Wert (oder ein img-Tag für Bilder)
-        // Wenn du Bilder verwendest:
-        // const img = document.createElement('img');
-        // img.src = cardImages[cardValues.indexOf(value)]; // Annahme: cardValues und cardImages haben gleiche Reihenfolge
-        // cardBack.appendChild(img);
+        cardBack.textContent = value; // Zeigt den Wert
 
         cardElement.appendChild(cardFront);
         cardElement.appendChild(cardBack);
@@ -93,23 +91,19 @@ function startTimer() {
 
 // Funktion zum Behandeln von Klicks auf Karten
 function handleCardClick(event) {
-    const clickedCard = event.currentTarget; // Das Element, an das der Event Listener gebunden ist
+    const clickedCard = event.currentTarget;
 
-    // Klicks ignorieren, wenn:
-    // - Das Board gesperrt ist (während Karten verglichen werden)
-    // - Die Karte bereits aufgedeckt ist
-    // - Die Karte bereits Teil eines gefundenen Paares ist
     if (lockBoard || clickedCard.classList.contains('flipped') || clickedCard.classList.contains('matched')) {
         return;
     }
 
-    clickedCard.classList.add('flipped'); // Karte aufdecken
+    clickedCard.classList.add('flipped');
     flippedCards.push(clickedCard);
 
     if (flippedCards.length === 2) {
         moves++;
         movesDisplay.textContent = `Versuche: ${moves}`;
-        lockBoard = true; // Board sperren, um weitere Klicks zu verhindern
+        lockBoard = true;
         checkForMatch();
     }
 }
@@ -120,21 +114,19 @@ function checkForMatch() {
     const isMatch = cardOne.dataset.value === cardTwo.dataset.value;
 
     if (isMatch) {
-        // Paare gefunden
         cardOne.classList.add('matched');
         cardTwo.classList.add('matched');
         matchedPairs++;
-        resetBoard(); // Board für nächste Runde entsperren und flippedCards leeren
+        resetBoard();
         if (matchedPairs === cardValues.length) {
             endGame();
         }
     } else {
-        // Keine Übereinstimmung, Karten nach kurzer Zeit wieder verdecken
         setTimeout(() => {
             cardOne.classList.remove('flipped');
             cardTwo.classList.remove('flipped');
             resetBoard();
-        }, 1000); // 1 Sekunde warten, dann verdecken
+        }, 1000);
     }
 }
 
@@ -145,9 +137,32 @@ function resetBoard() {
 
 // Funktion zum Beenden des Spiels
 function endGame() {
-    clearInterval(timerInterval); // Timer stoppen
+    clearInterval(timerInterval);
     statusMessage.textContent = `Spiel beendet! Du hast alle ${cardValues.length} Paare in ${moves} Versuchen und ${timer} Sekunden gefunden!`;
-    startButton.textContent = 'Nochmal spielen'; // Text des Startbuttons ändern
+    startButton.textContent = 'Nochmal spielen';
+
+    // Highscore überprüfen und speichern
+    if (moves < highscore) {
+        highscore = moves;
+        saveHighscore(highscore);
+        highscoreDisplay.textContent = `Highscore: ${highscore} Versuche (Neu!)`;
+    }
+}
+
+// Highscore in Local Storage speichern
+function saveHighscore(score) {
+    localStorage.setItem('memoryHighscore', score);
+}
+
+// Highscore aus Local Storage laden
+function loadHighscore() {
+    const savedHighscore = localStorage.getItem('memoryHighscore');
+    if (savedHighscore !== null) {
+        highscore = parseInt(savedHighscore, 10);
+        highscoreDisplay.textContent = `Highscore: ${highscore} Versuche`;
+    } else {
+        highscoreDisplay.textContent = `Highscore: N/A`;
+    }
 }
 
 // Event Listener für den Start-Button

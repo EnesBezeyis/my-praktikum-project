@@ -1,0 +1,632 @@
+/* Globale Farbdefinitionen (CSS Variables) */
+:root {
+    --color-dark-green: #2A7F00; /* Hauptakzentgrün, dunkler */
+    --color-medium-green: #4CAF50; /* Mittleres Grün für Hover, Akzente */
+    --color-light-green: #8BC34A; /* Helles Grün, z.B. für leichte Hintergründe */
+    --color-dark-bg: #1A1A1A;     /* Sehr dunkles Grau/Schwarz für Header/Footer */
+    --color-white: #FFFFFF;       /* Reinweiß für Hauptinhalte */
+    --color-text-dark: #333333;   /* Dunkles Grau für Haupttext auf hellem BG */
+    --color-text-light: #F0F0F0;  /* Leicht abweichend von reinem Weiß für Text auf dunklem BG */
+}
+
+/* Allgemeine Resets und Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased; /* Für bessere Schriftglättung */
+    scroll-behavior: smooth; /* Sanftes Scrollen zu Ankern */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark-green);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-medium-green);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.8em;
+    color: var(--color-text-dark);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--color-dark-green); /* Überschriften in Grün */
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+    padding: 12px 28px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: var(--color-medium-green);
+    transform: translateY(-2px); /* Leichter Schwebe-Effekt */
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9em;
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: var(--color-medium-green);
+}
+
+
+/* Header */
+header {
+    background-color: var(--color-dark-bg);
+    color: var(--color-white);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--color-dark-green);
+    position: sticky; /* Header bleibt oben beim Scrollen */
+    top: 0;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen liegt */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* Angepasst an die temporäre Höhe im HTML */
+    width: auto;
+    display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--color-white);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative; /* Für den Unterstrich-Effekt */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-medium-green);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none; /* Standardmäßig ausgeblendet für Desktop */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://via.placeholder.com/1920x600/333333/FFFFFF?text=Modernes+Büro+Ambiente') no-repeat center center/cover;
+    color: var(--color-white);
+    text-align: center;
+    padding: 120px 0;
+    display: flex; /* Für vertikale Zentrierung des Inhalts */
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; /* Mindesthöhe für die Sektion */
+}
+
+.hero-section h2 {
+    color: var(--color-white);
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: var(--color-text-light);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sections Allgemein */
+section {
+    padding: 80px 0; /* Standard-Padding für alle Sektionen */
+}
+
+section:nth-child(even) { /* Für abwechselnde Hintergrundfarben */
+    background-color: #f8f8f8; /* Sehr helles Grau */
+}
+
+/* Products Section */
+.products-section {
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Bilder decken den Bereich ab */
+    border-bottom: 1px solid var(--color-light-green);
+}
+
+.product-card h4 {
+    color: var(--color-dark-green);
+    font-size: 1.4em;
+    padding: 15px 20px 5px;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    padding: 0 20px 15px;
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+}
+
+.product-card .btn-small {
+    margin: 0 20px 20px;
+    display: inline-block; /* Damit der Button die Breite des Inhalts nimmt */
+}
+
+
+/* Services Section */
+.services-section {
+    background-color: var(--color-light-green); /* Helleres Grün als Hintergrund */
+    color: var(--color-white);
+    text-align: center;
+}
+
+.services-section h3 {
+    color: var(--color-white); /* Überschrift auf hellem Grün weiß */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Leichte Transparenz für den Effekt */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: var(--color-text-dark); /* Textfarbe auf hellem Hintergrund */
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--color-white);
+}
+
+.service-item i {
+    font-size: 3em;
+    color: var(--color-dark-green);
+    margin-bottom: 15px;
+}
+
+.service-item h4 {
+    font-size: 1.5em;
+    color: var(--color-dark-green);
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 0.95em;
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    color: var(--color-text-dark);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--color-dark-bg);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.contact-section h3 {
+    color: var(--color-white);
+}
+
+.contact-section > p { /* Hier das margin-bottom für den Text direkt unter h3 */
+    margin-bottom: 30px;
+    color: var(--color-text-light);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 40px; /* Abstand zum Kontaktdaten-Block */
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: left; /* Formularfelder links ausrichten */
+    color: var(--color-text-dark);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif; /* Damit die Schriftart einheitlich ist */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Nur vertikales Resizing erlauben */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-dark-green);
+    box-shadow: 0 0 0 3px rgba(42, 127, 0, 0.2); /* Grüner Fokus-Schatten */
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.contact-details {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Leichter Hintergrund für die Kontaktdaten */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Zentriert den gesamten Blockinhalt */
+}
+
+.contact-details h4 {
+    color: var(--color-white);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Stile für einzelne Kontaktzeilen (Telefon, E-Mail, Adresse) */
+.contact-details > p { /* Ziel nur die direkten p-Tags im contact-details Div */
+    color: var(--color-text-light);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex; /* Für Icon und Text nebeneinander */
+    align-items: center;
+    justify-content: center; /* Zentriert die Zeile horizontal */
+    flex-wrap: wrap; /* Erlaubt Umbruch auf mehreren Zeilen für sehr kleine Bildschirme */
+}
+
+.contact-details > p i {
+    margin-right: 10px;
+    color: var(--color-light-green); /* Icon-Farbe */
+    font-size: 1.2em;
+}
+
+.contact-details > p a {
+    color: var(--color-text-light); /* Linkfarbe für Telefonnummer und Adresse */
+}
+
+.contact-details > p a:hover {
+    color: var(--color-light-green);
+}
+
+/* Neue Stile für Öffnungszeiten Liste */
+.opening-hours {
+    list-style: none; /* Entfernt die Standard-Listenpunkte */
+    padding: 0;
+    margin-top: 25px; /* Abstand zur oberen Kontaktinfo */
+    text-align: center;
+    color: var(--color-text-light); /* Farbe für den Text der Öffnungszeiten */
+}
+
+.opening-hours li {
+    margin-bottom: 5px;
+    font-size: 1.05em;
+    display: flex; /* Um Tag und Zeit nebeneinander zu halten */
+    justify-content: center; /* Zentriert die Tages-/Zeitpaare */
+    align-items: center;
+}
+
+.opening-hours .day {
+    font-weight: 600;
+    margin-right: 10px; /* Abstand zwischen Tag und Zeit */
+    min-width: 100px; /* Einheitliche Breite für den Tag, um Ausrichtung zu verbessern */
+    text-align: right; /* Tag rechtsbündig ausrichten */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 3px solid var(--color-dark-green);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    margin: 0 10px;
+    font-size: 0.95em;
+}
+
+.footer-links a:hover {
+    color: var(--color-light-green);
+}
+
+.social-media a {
+    color: var(--color-text-light);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--color-light-green);
+}
+
+/* Responsivität */
+@media (max-width: 992px) {
+    .hero-section h2 {
+        font-size: 3.2em;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap; /* Ermöglicht Umbruch auf mehreren Zeilen */
+        justify-content: space-between; /* Logo links, Toggle rechts */
+    }
+
+    .logo {
+        margin-bottom: 0; /* Abstand zum Menü auf kleineren Bildschirmen entfernen */
+    }
+
+    nav {
+        width: 100%; /* Navigation nimmt volle Breite ein */
+        order: 1; /* Navigation unter dem Logo/Toggle platzieren */
+        margin-top: 15px;
+    }
+
+    nav .nav-menu {
+        display: none; /* Menü standardmäßig ausgeblendet */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-dark-bg); /* Hintergrundfarbe für aufgeklapptes Menü */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav .nav-menu.active {
+        display: flex; /* Menü anzeigen, wenn aktiv */
+    }
+
+    nav ul li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0; /* Kein Padding hier, da es im a ist */
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block; /* Links nehmen volle Breite */
+        padding: 15px 0; /* Padding für bessere Klickfläche */
+        text-align: center;
+    }
+
+    nav ul li a::after {
+        display: none; /* Unterstrich im Mobilmenü ausblenden */
+    }
+
+    .nav-toggle {
+        display: block; /* Hamburger-Icon anzeigen */
+        margin-left: auto; /* Schiebt den Toggle nach rechts */
+    }
+
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .product-grid, .service-grid {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleinen Bildschirmen */
+    }
+
+    .product-card, .service-item {
+        margin-bottom: 20px; /* Abstand zwischen den Karten */
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    /* Anpassung für contact-details auf kleinen Bildschirmen */
+    .contact-details > p { /* Für Telefon, E-Mail, Adresse */
+        flex-direction: column; /* Icons und Text untereinander */
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-details > p i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .opening-hours li { /* Für Öffnungszeiten auf kleinen Bildschirmen */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opening-hours .day {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}

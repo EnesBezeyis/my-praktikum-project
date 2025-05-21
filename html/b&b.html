@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&B Bürotechnik - Dein Büro. Dein Stil. Unsere Möbel.</title>
+    <link rel="stylesheet" href="../css/b&b.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="../images/b&b.jpg" alt="B&B Bürotechnik Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <button class="nav-toggle" aria-label="Navigation umschalten">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Produkte</a></li>
+                    <li><a href="#services">Dienstleistungen</a></li>
+                    <li><a href="#about">Über Uns</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h2>Dein Büro. Dein Stil. Unsere Möbel.</h2>
+                <p>Moderne Bürolösungen und Technik, die Ihren Arbeitsalltag revolutionieren.</p>
+                <a href="https://www.kleinanzeigen.de/pro/bb-buerotechnick" target="_blank" rel="noopener noreferrer" class="btn">Unsere Produkte entdecken</a>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <div class="container">
+                <h3>Unsere Top-Produkte</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="../images/b&bstuhl.jpg" alt="Ergonomischer Bürostuhl">
+                        <h4>Ergonomische Bürostühle</h4>
+                        <p>Komfort und Gesundheit für Ihren Arbeitsplatz. Verschiedene Modelle und Marken.</p>
+                        <a href="#" class="btn-small">Mehr erfahren</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="../images/b&bschrank.jpg" alt="Qualitative Schränke">
+                        <h4>Qualitative Schränke</h4>
+                        <p>Optimieren Sie Ihren Stauraum mit unseren qualitativen Schränken, die Funktionalität und Langlebigkeit stilvoll vereinen.</p>
+                        <a href="#" class="btn-small">Mehr erfahren</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="../images/b&btische.jpg" alt="Höhenverstellbarer Schreibtisch">
+                        <h4>Moderne Schreibtische</h4>
+                        <p>Anpassungsfähige Lösungen für dynamisches Arbeiten. Höhenverstellbar und modular.</p>
+                        <a href="#" class="btn-small">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h3>Unsere Dienstleistungen</h3>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fas fa-wrench"></i>
+                        <h4>Wartung & Support</h4>
+                        <p>Zuverlässiger Service und schnelle Hilfe für Ihre Bürotechnik.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-chair"></i>
+                        <h4>Büroplanung</h4>
+                        <p>Effiziente Raumkonzepte für Ihr Unternehmen, individuell angepasst.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-recycle"></i>
+                        <h4>Geräteentsorgung</h4>
+                        <p>Fachgerechte und umweltfreundliche Entsorgung alter Bürotechnik.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h3>Über B&B Bürotechnik</h3>
+                <p>Clever Lösungen für clevere Büros! Bei B&B Bürotechnik!
+Gestalte dein Büro mit Qualitativ hochwertigen Produkten ohne dein Budget zu Strapazieren.
+Entdecke unsere vielfältige Auswahl an Tischen,Schränken,Stühlen, Druckern und mehr.
+Mach dein Büro zu einem Ort, an dem Produktivität und Komfort Hand in Hand gehen, mit B&B Bürotechnik</p>
+                <p>Wir legen Wert auf Qualität, Nachhaltigkeit und exzellenten Kundenservice. Vertrauen Sie auf unsere Expertise und unser Engagement für Ihre Zufriedenheit.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h3>Kontaktieren Sie uns</h3>
+                <p>Haben Sie Fragen oder wünschen Sie eine persönliche Beratung? Wir freuen uns auf Ihre Nachricht!</p>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ihr Name:</label>
+                        <input type="text" id="name" name="Name" placeholder="Name Nachname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ihre E-Mail-Adresse:</label>
+                        <input type="email" id="email" name="Email" placeholder="ihre@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht:</label>
+                        <textarea id="message" name="Nachricht" placeholder="Ihre Nachricht hier..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Nachricht senden</button>
+                </form>
+                <div class="contact-details">
+                    <h4>Direkter Kontakt:</h4>
+                    <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+491729443432">0172 9443432</a></p>
+                    <p><i class="fas fa-envelope"></i> E-Mail: <a href="mailto:bb.buerotechnik@gmail.com">bb.buerotechnik@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Adresse: <a href="https://maps.google.com/?q=Brendelweg+131,+27755+Delmenhorst" target="_blank" rel="noopener noreferrer">Brendelweg 131, 27755 Niedersachsen - Delmenhorst</a></p>
+                    <h4>Öffnungszeiten:</h4>
+                    <ul class="opening-hours">
+                        <li><span class="day">Montag:</span> 09:00–18:00</li>
+                        <li><span class="day">Dienstag:</span> 09:00–18:00</li>
+                        <li><span class="day">Mittwoch:</span> 09:00–18:00</li>
+                        <li><span class="day">Donnerstag:</span> 09:00–18:00</li>
+                        <li><span class="day">Freitag:</span> 09:00–18:00</li>
+                        <li><span class="day">Samstag:</span> 09:00–18:00</li>
+                        <li><span class="day">Sonntag:</span> Geschlossen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 B&B Bürotechnik. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="https://www.kleinanzeigen.de/pro/bb-buerotechnick" target="_blank" rel="noopener noreferrer">Unsere Kleinanzeigen</a>
+            </div>
+            <div class="social-media">
+                <a href="https://g.co/kgs/9T8Tu6X" target="_blank" rel="noopener noreferrer" aria-label="Google"><i class="fab fa-google"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close nav menu when a link is clicked (for mobile)
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
